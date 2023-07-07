@@ -1,0 +1,70 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=2.5cm, top=2cm, right=1cm, bottom=20mm, nohead, nofoot]{geometry}
+
+%%% Работа с русским языком
+\usepackage{fontspec}      %% подготавливает загрузку шрифтов Open Type, True Type и др.
+\usepackage[english,russian]{babel}   %% загружает пакет многоязыковой вёрстки
+\defaultfontfeatures{Ligatures={TeX},Renderer=Basic}  %% свойства шрифтов по умолчанию
+\setmainfont[Ligatures={TeX,Historic}]{Times New Roman} %% задаёт основной шрифт документа
+\setsansfont{Comic Sans MS}                    %% задаёт шрифт без засечек
+\setmonofont{Courier New}
+\usepackage{indentfirst}
+\frenchspacing
+
+%%% Дополнительная работа с математикой
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+
+%%% Работа с картинками
+\usepackage{graphicx}  % Для вставки рисунков
+
+
+\begin{document}
+\thispagestyle{empty} % нумерация выкл.
+
+\begin{center}
+МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ
+
+РОССИЙСКОЙ ФЕДЕРАЦИИ
+
+федеральное государственное автономное образовательное учреждение высшего образования\\
+<<Омский государственный технический университет>>
+
+\vspace*{10mm}
+Факультет информационных технологий и компьютерных систем
+
+Кафедра <<Прикладная математика и фундаментальная информатика>>
+
+\vspace*{20mm}
+
+\textbf{\Large Домашняя работа}
+
+\vspace*{20mm}
+\begin{tabular}{ll}
+по дисциплине	& Операционные системы и оболочки\\
+на тему	      & Разделяемая память. Командные файлы
+\end{tabular}
+
+\vspace*{20mm}
+\begin{tabular}{lll}
+\hspace*{40mm}&Студента	  &\underline{Бухалова Дениса Владиимировича \hspace*{11mm}}\\
+              & &	{\footnotesize фамилия, имя, отчество полностью}\\
+&Курс	&3\ \ \ Группа	\underline{МО-201\hspace*{44mm}}\\
+&Направление  	& \underline{02.03.03 Математическое обеспечение\hspace*{9mm}}\\
+&& \underline{и администрирование\hspace*{39mm}}\\
+&& \underline{информациооных систем\hspace*{33mm}} \\
+	&&{\footnotesize код, наименование}\\
+&Руководитель	    & \underline{Ст. пр \hspace*{67mm}}\\
+&&{\footnotesize	должность, ученая степень, звание}\\
+	       && \underline{Карабцов Р. Д. \hspace*{50mm}}\\
+	&& {\footnotesize фамилия, инициалы}\\
+&Выполнил&  \underline{\includegraphics[height=8mm, width=15mm]{fake_pod.png} {\hspace*{65mm}}}  \\	
+&& {\footnotesize дата, подпись студента}\\
+&баллы&\underline{\includegraphics[height=8mm, width=15mm]{fake_pod.png} {\hspace*{65mm}}}\\
+&& {\footnotesize дата, подпись руководителя}
+\end{tabular}
+
+\vspace*{10mm}
+Омск 2023
+\end{center}
+
+\end{document}

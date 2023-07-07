@@ -1,14 +1,34 @@
-# rust is just for fun feel free to change it to any debian based distro
-FROM rust:bullseye
+# FROM bitnami/minideb:latest
 
-RUN apt-get update && \
-    apt-get install -y texlive-latex-base texlive-latex-extra \
-                    texlive-fonts-recommended texlive-fonts-extra \
-                    texlive-science texlive-publishers texlive-lang-cyrillic \
-                    texlive-xetex texlive-pictures texlive-metapost texlive-latex-recommended
-WORKDIR /app
+# # docker build -t myimage .
 
-# CMD ["pdflatex", "-output-directory=/app", "-jobname=out", "main.tex"]
-# 
-# RUN cargo build --release
-# CMD ["cargo", "run"]
+# RUN apt-get update 
+# RUN apt-get install -y texlive-latex-base texlive-latex-extra texlive-latex-recommended \
+#                     texlive-fonts-recommended texlive-fonts-extra texlive-lang-cyrillic \
+#                     texlive-science texlive-publishers texlive-pictures texlive-metapost\
+#                     texlive-xetex 
+# # enable auto accepting terms of use
+# RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
+# # install all fonts like TimesNewRomen
+# RUN apt-get install -y ttf-mscorefonts-installer
+
+# ENTRYPOINT ["xelatex"]
+
+FROM ubuntu:latest
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+# docker build -t myimage .
+
+RUN apt-get update 
+RUN apt-get install -y texlive-latex-base texlive-latex-extra \
+                    texlive-fonts-recommended texlive-lang-cyrillic \
+                    texlive-science texlive-pictures \
+                    texlive-xetex 
+# enable auto accepting terms of use
+RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
+# install all fonts like TimesNewRomen
+RUN apt-get install -y ttf-mscorefonts-installer
+
+WORKDIR /tmp
+# ENTRYPOINT ["xelatex"]
