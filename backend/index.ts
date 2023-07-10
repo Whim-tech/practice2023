@@ -1,15 +1,12 @@
-import express, { Express, Request, Response } from 'express';
-import dotenv from 'dotenv';
+import express, { Request, Response } from 'express';
 
-dotenv.config();
-
-const app: Express = express();
-const port = 8080;
+const app = express();
+const port = 3000;
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Hello, world!');
+  res.send('Hello World helloooooo!');
 });
 
 app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+  console.log(`Server started on port ${port}`);
 });
