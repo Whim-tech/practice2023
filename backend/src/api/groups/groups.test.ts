@@ -17,6 +17,14 @@ beforeAll(async () => {
     } catch (error) { }
 });
 
+afterAll(async () => {
+    try {
+        await Groups.drop();
+    } catch (error) {}
+});
+
+
+
 describe('GET /api/v1/groups', () => {
     it('responds with an array of groups', async () =>
         request(app)

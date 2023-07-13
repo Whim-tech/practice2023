@@ -16,6 +16,12 @@ beforeAll(async () => {
     } catch (error) { }
 });
 
+afterAll(async () => {
+    try {
+        await Lecturers.drop();
+    } catch (error) {}
+});
+
 describe('GET /api/v1/lecturers', () => {
     it('responds with an array of lecturers', async () =>
         request(app)

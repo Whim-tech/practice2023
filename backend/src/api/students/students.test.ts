@@ -26,6 +26,13 @@ beforeAll(async () => {
     } catch (error) { }
 });
 
+afterAll(async () => {
+    try {
+        await Students.drop();
+        await Groups.drop();
+    } catch (error) {}
+});
+
 describe('GET /api/v1/students', () => {
     it('responds with an array of students', async () =>
         request(app)

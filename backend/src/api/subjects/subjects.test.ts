@@ -16,6 +16,12 @@ beforeAll(async () => {
     } catch (error) { }
 });
 
+afterAll(async () => {
+    try {
+        await Subjects.drop();
+    } catch (error) {}
+});
+
 describe('GET /api/v1/subjects', () => {
     it('responds with an array of subjects', async () =>
         request(app)
