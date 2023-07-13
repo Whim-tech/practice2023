@@ -13,11 +13,11 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.dev
-    restart: on-failure
+    # restart: on-failure
     depends_on:
       - mongo
     volumes:
-      - ./:/usr/src/app:z
+      - ./:/usr/src/app:cached
       - npm_cache:/root/.npm:delegated
       - node_modules:/usr/src/app/node_modules:delegated
     ports:

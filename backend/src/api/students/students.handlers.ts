@@ -20,7 +20,7 @@ export async function findOne(req: Request<ParamsWithId, StudentWithId, {}>, res
         });
         if (!result) {
             res.status(404);
-            throw new Error(`Group with id "${req.params.id}" not found.`);
+            throw new Error(`Student with id "${req.params.id}" not found.`);
         }
         res.json(result);
     } catch (error) {

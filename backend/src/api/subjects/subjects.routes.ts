@@ -14,12 +14,5 @@ router.get(
     }),
     SubjectHandlers.findOne,
 );
-// router.get(
-//     '/:name',
-//     validateRequest({
-//         params: ParamsWithId,
-//     }),
-//     SubjectHandlers.findOneByName,
-// );
 
 export default router;
