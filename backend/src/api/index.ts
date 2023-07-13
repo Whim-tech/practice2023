@@ -3,6 +3,7 @@ import express from 'express';
 import MessageResponse from '../interfaces/MessageResponse';
 import todos from './todos/todos.routes';
 import subjects from './subjects/subjects.routes'
+import groups from './groups/groups.routes'
 
 const router = express.Router();
 
@@ -14,5 +15,6 @@ router.get<{}, MessageResponse>('/', (req, res) => {
 
 router.use('/todos', todos);
 router.use('/subjects', subjects);
+router.use('/groups', groups);
 
 export default router;
