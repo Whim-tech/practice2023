@@ -15,3 +15,15 @@ npm run test
 # Development
 npm run dev
 ```
+
+env example:
+
+```txt
+PORT=3000
+NODE_ENV=development
+MONGO_HOST=mongo
+MONGO_USERNAME=admin
+MONGO_PASSWORD=root
+MONGO_PORT=27017
+MONGO_DBNAME=maindb
+```
