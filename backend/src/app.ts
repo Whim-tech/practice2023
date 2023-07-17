@@ -16,11 +16,13 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.get<{}, MessageResponse>('/', (req, res) => {
-  res.json({
-    message: 'server is working!',
-  });
-});
+app.use(express.static('public'))
+
+// app.get<{}, MessageResponse>('/', (req, res) => {
+//   res.json({
+//     message: 'server is working!',
+//   });
+// });
 
 app.use('/api/v1', api);
 
